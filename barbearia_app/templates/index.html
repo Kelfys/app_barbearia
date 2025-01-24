@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbershop</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Agende seu horário</h1>
+
+        <!-- Exibição de mensagens de feedback -->
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div id="messages">
+                {% for message in messages %}
+                    <div class="success">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% endwith %}
+
+        <form action="/" method="POST">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="whatsapp">Número do WhatsApp:</label>
+            <input type="tel" id="whatsapp" name="whatsapp" pattern="^\+[1-9]{1}[0-9]{1,14}$" placeholder="Ex: +55 11 91234-5678" required>
+
+            <label for="servico">Tipo de Serviço:</label>
+            <select id="servico" name="servico" required>
+                <option value="corte">Corte de Cabelo (R$ 30)</option>
+                <option value="barba">Barba (R$ 20)</option>
+                <option value="corte_e_barba">Corte de Cabelo e Barba (R$ 50)</option>
+                <option value="outros">Outros</option>
+            </select>
+
+            <label for="horario">Horário:</label>
+            <input type="datetime-local" id="horario" name="horario" required>
+
+            <!-- Exibição do Total -->
+            <p id="total">Total: R$ 0.00</p>
+
+            <button type="submit">Agendar</button>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
