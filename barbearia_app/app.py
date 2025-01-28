@@ -18,6 +18,7 @@ def index():
             "corte": 30,
             "barba": 20,
             "corte_e_barba": 50,
+            "sobrancelha": 10,
             "outros": 0
         }
         preco_servico = precos.get(servico, 0)
