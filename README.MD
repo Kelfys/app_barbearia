@@ -5,6 +5,7 @@ Bem-vindo ao **Barbershop**, um sistema simples e funcional para agendamento de 
 
 Este projeto permite que clientes agendem cortes de cabelo, barba, ou outros serviços diretamente pelo site, com confirmação visual do horário e valor total.
 
+Pode ser visto em : https://kelfis.pythonanywhere.com/
 ---
 
 ## Funcionalidades
